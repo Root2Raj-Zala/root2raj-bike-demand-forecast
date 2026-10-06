@@ -1,5 +1,7 @@
 # Tomorrow's bike demand, without tomorrow's evidence
 
+By **[Ruturajsinh Zala (Root2Raj)](https://root2raj.ruturaj1zala123.chatgpt.site/about/)**. Root2Raj is my personal coding username. [Read the portfolio case study](https://root2raj.ruturaj1zala123.chatgpt.site/projects/bike-demand-forecast/).
+
 **Root2Raj · Data Science · AI-assisted historical case study**
 
 An operations planner needs a next-day system-wide demand estimate. A shuffled train/test split or same-day weather measurement can make that estimate look better than the information actually available. This project forecasts using only historical rental counts and known calendar inputs, then measures errors on later dates.
