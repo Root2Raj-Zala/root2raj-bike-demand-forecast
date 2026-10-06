@@ -1,0 +1,10 @@
+data/*
+!data/SOURCE.md
+.cache/
+.packages/
+.venv/
+__pycache__/
+*.py[cod]
+outputs/*.duckdb*
+outputs/*.parquet
+outputs/*.png

@@ -1,0 +1,242 @@
+{
+  "source": {
+    "name": "UCI Bike Sharing, daily file",
+    "url": "https://archive.ics.uci.edu/static/public/275/bike%2Bsharing%2Bdataset.zip",
+    "landing_page": "https://archive.ics.uci.edu/dataset/275/bike+sharing+dataset",
+    "citation": "Fanaee-T, H. (2013). Bike Sharing [Dataset]. DOI: 10.24432/C5W894.",
+    "license": "CC BY 4.0",
+    "rows": 731,
+    "start": "2011-01-01",
+    "end": "2012-12-31",
+    "sha256_day_csv": "a6bcf826782d3c0fbfdcbeead17cd0884185a0dafe8ff10cd48a874ee7ba18be"
+  },
+  "protocol": {
+    "horizon": "one day ahead; previous daily total assumed available",
+    "initial_training": "2011-01-29 to 2011-12-31 (lags need 28 warm-up days)",
+    "validation": "2012-01-01 to 2012-06-30",
+    "validation_days": 182,
+    "test": "2012-07-01 to 2012-12-31",
+    "test_days": 184,
+    "max_training_window_days": 365,
+    "refit_frequency": "daily",
+    "selection_rule": "lowest validation MAE; frozen before test",
+    "features": [
+      "lag_1",
+      "lag_7",
+      "lag_14",
+      "lag_28",
+      "mean_7",
+      "mean_28",
+      "weekday_sin",
+      "weekday_cos",
+      "year_sin",
+      "year_cos",
+      "holiday",
+      "trend"
+    ],
+    "excluded_same_day_inputs": [
+      "atemp",
+      "casual",
+      "cnt",
+      "hum",
+      "registered",
+      "temp",
+      "weathersit",
+      "windspeed"
+    ],
+    "ridge_penalties_predeclared": [
+      1.0,
+      10.0,
+      100.0
+    ]
+  },
+  "selected_method": "ridge_1",
+  "validation_selected_baseline": "yesterday",
+  "validation_scores": {
+    "yesterday": {
+      "mae_rentals": 900.6043956043956,
+      "rmse_rentals": 1273.4612908685758,
+      "wape_percent": 17.48047031220839,
+      "bias_rentals": -17.593406593406595
+    },
+    "last_week": {
+      "mae_rentals": 1090.7912087912089,
+      "rmse_rentals": 1469.1717259869795,
+      "wape_percent": 21.171941237635643,
+      "bias_rentals": -181.5054945054945
+    },
+    "four_week_weekday_mean": {
+      "mae_rentals": 915.9986263736264,
+      "rmse_rentals": 1208.3925862540436,
+      "wape_percent": 17.7792678699976,
+      "bias_rentals": -398.6552197802198
+    },
+    "ridge_1": {
+      "mae_rentals": 746.4643194221869,
+      "rmse_rentals": 1056.8542842194709,
+      "wape_percent": 14.488656105243075,
+      "bias_rentals": -5.962911076680479
+    },
+    "ridge_10": {
+      "mae_rentals": 749.3091060895814,
+      "rmse_rentals": 1050.4241930097924,
+      "wape_percent": 14.543872590002273,
+      "bias_rentals": -37.1153088410826
+    },
+    "ridge_100": {
+      "mae_rentals": 790.1223345126081,
+      "rmse_rentals": 1049.4124404542165,
+      "wape_percent": 15.336045525506668,
+      "bias_rentals": -183.83533614519462
+    }
+  },
+  "test_scores": {
+    "yesterday": {
+      "mae_rentals": 840.0760869565217,
+      "rmse_rentals": 1218.9774313993141,
+      "wape_percent": 13.901777226569632,
+      "bias_rentals": 16.07608695652174
+    },
+    "last_week": {
+      "mae_rentals": 1129.7880434782608,
+      "rmse_rentals": 1648.4026177537426,
+      "wape_percent": 18.695999014300735,
+      "bias_rentals": 184.4945652173913
+    },
+    "four_week_weekday_mean": {
+      "mae_rentals": 964.7459239130435,
+      "rmse_rentals": 1438.207293504547,
+      "wape_percent": 15.964843093045154,
+      "bias_rentals": 326.5285326086956
+    },
+    "ridge_1": {
+      "mae_rentals": 774.7266784039341,
+      "rmse_rentals": 1120.5765157790868,
+      "wape_percent": 12.820359800586912,
+      "bias_rentals": 83.05303584039935
+    },
+    "ridge_10": {
+      "mae_rentals": 770.545353608999,
+      "rmse_rentals": 1117.848022118572,
+      "wape_percent": 12.751166251676706,
+      "bias_rentals": 85.25690889796454
+    },
+    "ridge_100": {
+      "mae_rentals": 792.6557719829742,
+      "rmse_rentals": 1143.9754679012667,
+      "wape_percent": 13.11705466987324,
+      "bias_rentals": 81.98479006759231
+    }
+  },
+  "test_mae_reduction_vs_validation_selected_baseline_percent": 7.778986875979221,
+  "test_interval_coverage_percent": 86.41304347826086,
+  "interval_method": "validation residual 5th/95th quantiles; fixed during test; descriptive, not guaranteed",
+  "test_monthly": [
+    {
+      "month": "2012-07",
+      "days": 31,
+      "mae_rentals": 674.769468919729,
+      "rmse_rentals": 849.1630800918833,
+      "wape_percent": 10.27364164125575,
+      "bias_rentals": -5.920107488547582
+    },
+    {
+      "month": "2012-08",
+      "days": 31,
+      "mae_rentals": 648.798513644562,
+      "rmse_rentals": 788.5643422021806,
+      "wape_percent": 9.376444116390644,
+      "bias_rentals": -241.64640055099534
+    },
+    {
+      "month": "2012-09",
+      "days": 30,
+      "mae_rentals": 774.0724408344979,
+      "rmse_rentals": 1019.1923632772529,
+      "wape_percent": 10.624447312813082,
+      "bias_rentals": -378.6722947076324
+    },
+    {
+      "month": "2012-10",
+      "days": 31,
+      "mae_rentals": 992.249315888424,
+      "rmse_rentals": 1684.1031512564248,
+      "wape_percent": 15.4695102079255,
+      "bias_rentals": 365.6434217493769
+    },
+    {
+      "month": "2012-11",
+      "days": 30,
+      "mae_rentals": 753.6976177861826,
+      "rmse_rentals": 1061.6437912437718,
+      "wape_percent": 14.810910583756142,
+      "bias_rentals": 344.4296325861242
+    },
+    {
+      "month": "2012-12",
+      "days": 31,
+      "mae_rentals": 804.0732521183646,
+      "rmse_rentals": 1085.379255228168,
+      "wape_percent": 20.148465250757237,
+      "bias_rentals": 408.0211010733507
+    }
+  ],
+  "test_retrospective_weather_error": [
+    {
+      "observed_weather_code": 1,
+      "days": 114,
+      "mae_rentals": 657.0920321095136,
+      "rmse_rentals": 878.9956414678394,
+      "wape_percent": 10.0765938329203,
+      "bias_rentals": -222.283429861753
+    },
+    {
+      "observed_weather_code": 2,
+      "days": 66,
+      "mae_rentals": 836.4217117303715,
+      "rmse_rentals": 1186.3825585668328,
+      "wape_percent": 15.379297051727269,
+      "bias_rentals": 427.04068798846225
+    },
+    {
+      "observed_weather_code": 3,
+      "days": 4,
+      "mae_rentals": 3109.3460479087057,
+      "rmse_rentals": 3538.0729723864924,
+      "wape_percent": 130.08455382946158,
+      "bias_rentals": 3109.3460479087057
+    }
+  ],
+  "worst_test_days": [
+    {
+      "date": "2012-10-29",
+      "actual": 22,
+      "selected_forecast": 6024.70564978254,
+      "absolute_error": 6002.70564978254
+    },
+    {
+      "date": "2012-10-07",
+      "actual": 3510,
+      "selected_forecast": 7468.729894480148,
+      "absolute_error": 3958.729894480148
+    },
+    {
+      "date": "2012-11-22",
+      "actual": 2425,
+      "selected_forecast": 5695.009015358775,
+      "absolute_error": 3270.0090153587753
+    },
+    {
+      "date": "2012-10-30",
+      "actual": 1096,
+      "selected_forecast": 4276.131160940589,
+      "absolute_error": 3180.1311609405893
+    },
+    {
+      "date": "2012-09-18",
+      "actual": 4073,
+      "selected_forecast": 7009.748614927217,
+      "absolute_error": 2936.748614927217
+    }
+  ]
+}

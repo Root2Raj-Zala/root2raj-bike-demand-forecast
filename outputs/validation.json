@@ -1,0 +1,10 @@
+{
+  "source_731_consecutive_days": true,
+  "rental_components_reconcile": true,
+  "no_same_day_outcome_or_observed_weather_features": true,
+  "every_training_cutoff_precedes_forecast": true,
+  "chronological_validation_test_split": true,
+  "forecasts_finite_and_nonnegative": true,
+  "feature_shift_matches_previous_day": true,
+  "model_selection_uses_validation_only": true
+}
