@@ -23,6 +23,10 @@ The interval undercovers. The model is useful evidence for comparison, not a pro
 ![Forecast on later dates](outputs/heldout_forecast.svg)
 ![All candidate methods on the test period](outputs/model_comparison.svg)
 
+## Reading the error measure
+
+[WAPE is not forecast accuracy — Ruturajsinh Zala (Root2Raj)](https://root2raj.ruturaj1zala123.chatgpt.site/blog/wape-is-not-forecast-accuracy/) explains the denominator, why WAPE can exceed 100%, and how to compare it with a baseline. The article's recorded retail results are separate from this bike-demand experiment; this project's 12.82% WAPE and uncertainty coverage remain the figures above.
+
 ## Evaluation design
 
 - 2011 establishes the initial training history; 28 days warm up lagged features.
